@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <main>
+        <header id="hero" class="md:pl-3 bg-[#f7fafc] mb-10">
+            <div class="grid grid-cols-12 w-full md:h-[80vh] h-full p-0">
+                <div class="md:col-span-6 col-span-12 p-5">
+                    <nav class="flex gap-12  p-3 mx-5">
+                        <div class="logo flex  gap-5    md:gap-2 items-center">
+                            <img src="./assets/asset 0.svg" alt="" class="md:w-10 w-12">
+                            <span class="md:text-3xl text-3xl text-headingColor font-bold font-sans">Treact</span>
+                        </div>
+                        <div class="navItems hidden md:flex gap-12 text-lg text-headingColor list-none">
+                            <li>About</li>
+                            <li>Blog</li>
+                            <li>Pricing</li>
+                            <li>Login</li>
+                        </div>
+                        <button class="md:hidden text-primary text-3xl z-10" id="bar" onclick="navToggler()"><i
+                                class="fas fa-bars"></i></button>
+                        <button class="hidden text-primary text-3xl z-10" id="closeButton" onclick="closeBtnClick()"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </nav>
+                    <div class="fixed list-none text-2xl    bg-white hidden justify-center flex-col items-center gap-10 z-0  font-bold w-full  top-5  border "
+                        id="mobNav">
+                        <li>About</li>
+                        <li>Blog</li>
+                        <li>Pricing</li>
+                        <li>Login</li>
+                    </div>
+                    <div class="mx-5 p-3 flex  flex-col md:gap-6 gap-10  md:mt-[4.5rem] mt-[6rem] h-full ">
+                        <div class="heroTitle text-[3.2rem] md:text-[3rem] font-bold font-inter">
+                            <p class="text-headingColor">Find Perect Hotels</p>
+                            <p class="text-primary mt-2 ">anywhere you go.</p>
+                        </div>
+                        <p class="text-[1.3rem] text-headingColor heroPara">We've been in the hotels business across the
+                            world for 5 years now. We assure you that you will always enjoy your stay with us.</p>
+                        <div class="flex flex-col md:flex-row gap-5">
+                            <button
+                                class="text-white bg-primary px-14 py-4 md:text-xl text-2xl  font-semibold rounded-md">Sing
+                                Up</button>
+                            <button
+                                class="text-gray-500 bg-gray-300 px-8 py-4 md:text-xl text-2xl font-semibold rounded-md">Search
+                                Hotel</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-14 md:mt-auto md:col-span-6 col-span-12 md:h-full h-[50vh] border-yellow-300">
+                    <!-- <img src="./assets/asset 6.jpeg" alt="" class="w-full h-full" style=""> -->
+                    <div class="heroImg w-full h-full "></div>
+                </div>
+
+            </div>
+        </header>
+
+        <section id="second" class=" md:pl-3 bg-[#f7fafc] h-auto md:my-5 p-5  my-10   ">
+            <div
+                class="w-full md:h-full h-full flex  md:flex-row flex-col items-center  md:justify-around  justify-center gap-20">
+                <div class="flex items-center gap-3  flex-col w-[18rem] hover:scale-[1.05] duration-[.5s]">
+                    <p class="bg-gray-200 flex items-center justify-center w-12 h-12 rounded-full"><i
+                            class="text-2xl text-primary fa-solid fa-shield"></i></p>
+                    <h3 class="text-3xl font-semibold">Secure</h3>
+                    <p class="text-center text-headingColor">We stricky deal with vendors that provide top notch
+                        security</p>
+                    <p class="text-primary font-semibold group"> Learn More <i
+                            class="ml-1 group-hover:ml-2 fa-solid fa-arrow-right"></i> </p>
+                </div>
+                <div class="flex items-center gap-3  flex-col w-[18rem] hover:scale-[1.05] duration-[.5s]">
+                    <p class="bg-gray-200 flex items-center justify-center w-12 h-12 rounded-full"><i
+                            class="text-2xl text-primary fa-solid fa-headset"></i></p>
+                    <h3 class="text-3xl font-semibold">24/7 Support</h3>
+                    <p class="text-center text-headingColor">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Soluta.</p>
+                    <p class="text-primary font-semibold group"> Learn More <i
+                            class="ml-1 group-hover:ml-2 fa-solid fa-arrow-right"></i> </p>
+                </div>
+                <div class="flex items-center gap-3  flex-col w-[18rem] hover:scale-[1.05] duration-[.5s]">
+                    <p class="bg-gray-200 flex items-center justify-center w-12 h-12 rounded-full"><i
+                            class="text-2xl text-primary fa-solid fa-sliders"></i></p>
+                    <h3 class="text-3xl font-semibold">Customizable</h3>
+                    <p class="text-center text-headingColor">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Accusantium?</p>
+                    <p class="text-primary font-semibold group"> Learn More <i
+                            class="ml-1 group-hover:ml-2 fa-solid fa-arrow-right"></i> </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="popularHotels" class="md:pl-3 bg-[#f7fafc] h-auto">
+            <div class="Ph-carasoul-outer md:mx-7 ">
+                <div class="flex justify-between mx-7">
+                    <h1 class="text-5xl text-headingColor font-bold">popular Hotels</h1>
+                    <div class="carasoul-btn flex gap-7">
+                        <button id="prev" class="prevBtn bg-primary rounded-full p-2 w-10 h-10"><i
+                                class="fa-solid fa-angle-left font-bold text-2xl text-white"></i></button>
+                        <button id="next" class="nextBtn bg-primary rounded-full p-2 w-10 h-10"><i
+                                class="fa-solid fa-angle-right font-bold text-2xl text-white"></i></button>
+                    </div>
+                </div>
+                <div class="swiper mySwiper ">
+                    <div class="swiper-wrapper md:gap-5 p-10 ">
+                        <div
+                            class="swiper-slide carasoul-card border  h-auto w-[25rem]  rounded-tl-[3rem] rounded-br-[3rem]">
+                            <div class="cImg w-full h-[15rem]">
+                                <img src="./assets/asset 7.jpeg" alt=""
+                                    class="w-full h-full object-cover rounded-tl-[3rem]">
+                            </div>
+                            <div class="mx-7 my-5 flex gap-5 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-headingColor text-4xl font-bold font-sans">Hotel Baja</h2>
+                                    <p><i class="fa-solid fa-star text-yellow-400 text-xl"></i> <span
+                                            class="text-xl font-bold text-headingColor">5.2</span></p>
+                                </div>
+                                <div class="flex  gap-7">
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">Polo Aolto, CA </span>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-dollar text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">USD 19/Day </span>
+                                    </div>
+                                </div>
+                                <div class="text-headingColor">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, aperiam? Iste
+                                    quod
+                                    temporibus perferendis vel. Error provident natus
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-[4.5rem] border text-2xl bg-primary text-white font-semibold flex justify-center items-center rounded-br-[3rem]">
+                                <span>Book Now</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="swiper-slide carasoul-card border  h-auto w-[25rem]   rounded-tl-[3rem] rounded-br-[3rem]">
+                            <div class="cImg w-full h-[15rem]">
+                                <img src="./assets/asset 8.jpeg" alt=""
+                                    class="w-full h-full object-cover rounded-tl-[3rem]">
+                            </div>
+                            <div class="mx-7 my-5 flex gap-5 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-headingColor text-4xl font-bold font-sans">Hudak Homes</h2>
+                                    <p><i class="fa-solid fa-star text-yellow-400 text-xl"></i> <span
+                                            class="text-xl font-bold text-headingColor">4.5</span></p>
+                                </div>
+                                <div class="flex  gap-7">
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">Polo Aolto, CA </span>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-dollar text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">USD 19/Day </span>
+                                    </div>
+                                </div>
+                                <div class="text-headingColor">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, aperiam? Iste
+                                    quod
+                                    temporibus perferendis vel. Error provident natus
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-[4.5rem] border text-2xl bg-primary text-white font-semibold flex justify-center items-center rounded-br-[3rem]">
+                                <span>Book Now</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="swiper-slide carasoul-card border  h-auto w-[25rem]   rounded-tl-[3rem] rounded-br-[3rem]">
+                            <div class="cImg w-full h-[15rem]">
+                                <img src="./assets/asset 9.jpeg" alt=""
+                                    class="w-full h-full object-cover rounded-tl-[3rem]">
+                            </div>
+                            <div class="mx-7 my-5 flex gap-5 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-headingColor text-4xl font-bold font-sans">Wiyet Residency</h2>
+                                    <p><i class="fa-solid fa-star text-yellow-400 text-xl"></i> <span
+                                            class="text-xl font-bold text-headingColor">4.8</span></p>
+                                </div>
+                                <div class="flex  gap-7">
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">Polo Aolto, CA </span>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-dollar text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">USD 19/Day </span>
+                                    </div>
+                                </div>
+                                <div class="text-headingColor">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, aperiam? Iste
+                                    quod
+                                    temporibus perferendis vel. Error provident natus
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-[4.5rem] border text-2xl bg-primary text-white font-semibold flex justify-center items-center rounded-br-[3rem]">
+                                <span>Book Now</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="swiper-slide carasoul-card border  h-auto w-[25rem]   rounded-tl-[3rem] rounded-br-[3rem]">
+                            <div class="cImg w-full h-[15rem]">
+                                <img src="./assets/asset 10.jpeg" alt=""
+                                    class="w-full h-full object-cover rounded-tl-[3rem]">
+                            </div>
+                            <div class="mx-7 my-5 flex gap-5 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-headingColor text-4xl font-bold font-sans">Soho Paradise</h2>
+                                    <p><i class="fa-solid fa-star text-yellow-400 text-xl"></i> <span
+                                            class="text-xl font-bold text-headingColor">5.6</span></p>
+                                </div>
+                                <div class="flex  gap-7">
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">Polo Aolto, CA </span>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-dollar text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">USD 19/Day </span>
+                                    </div>
+                                </div>
+                                <div class="text-headingColor">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, aperiam? Iste
+                                    quod
+                                    temporibus perferendis vel. Error provident natus
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-[4.5rem] border text-2xl bg-primary text-white font-semibold flex justify-center items-center rounded-br-[3rem]">
+                                <span>Book Now</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="swiper-slide carasoul-card border  h-auto w-[25rem]   rounded-tl-[3rem] rounded-br-[3rem]">
+                            <div class="cImg w-full h-[15rem]">
+                                <img src="./assets/asset 8.jpeg" alt=""
+                                    class="w-full h-full object-cover rounded-tl-[3rem]">
+                            </div>
+                            <div class="mx-7 my-5 flex gap-5 flex-col">
+                                <div class="flex justify-between items-center">
+                                    <h2 class="text-headingColor text-4xl font-bold font-sans">Hudak Homes</h2>
+                                    <p><i class="fa-solid fa-star text-yellow-400 text-xl"></i> <span
+                                            class="text-xl font-bold text-headingColor">4.5</span></p>
+                                </div>
+                                <div class="flex  gap-7">
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-location-dot text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">Polo Aolto, CA </span>
+                                    </div>
+                                    <div class="flex gap-2 items-center">
+                                        <p
+                                            class="rounded-full w-6 h-6  bg-headingColor flex justify-center items-center">
+                                            <i class="fa-solid fa-dollar text-white text-sm"></i>
+                                        </p> <span class="text-headingColor font-semibold">USD 19/Day </span>
+                                    </div>
+                                </div>
+                                <div class="text-headingColor">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, aperiam? Iste
+                                    quod
+                                    temporibus perferendis vel. Error provident natus
+                                </div>
+                            </div>
+                            <div
+                                class="w-full h-[4.5rem] border text-2xl bg-primary text-white font-semibold flex justify-center items-center rounded-br-[3rem]">
+                                <span>Book Now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trending-tours" class="md:pl-3   bg-[#f7fafc] h-auto ">
+            <div class="h-full  grid grid-cols-12 sm:p-7 ">
+                <div class="h-full   col-span-12 md:col-span-6">
+                    <div class=" sm:mx-6 flex  flex-col gap-10">
+                        <h1 class="text-5xl  text-headingColor font-extrabold">Trending Tours</h1>
+                        <p class="text-[#7c8ba1] text-lg font-semibold">Lorem ipsum dolor sit, amet consectetur
+                            adipisicing elit. Molestias corporis vero ipsam reiciendis veniam possimus in laborum
+                            voluptatum! Laborum, odio! Lorem, ipsum.</p>
+
+                        <p class="text-primary font-bold group text-xl pb-5 sm:pb-0"> View All Tours <i
+                                class="ml-1 group-hover:ml-2 fa-solid fa-arrow-right"></i> </p>
+                    </div>
+                </div>
+                <div
+                    class="h-full  col-span-12 md:col-span-6  flex md:flex-row flex-col gap-10 sm:gap-0 sm:justify-between ">
+                    <div class="tt-card md:w-[20rem] w-[25rem] h-auto ">
+                        <div class="w-full h-[20rem] "> <img src="assets/asset 11.jpeg" alt=""
+                                class="h-full w-full rounded-md "></div>
+                        <div class="tt-card-content flex flex-col gap-3 mt-5">
+
+                            <div class="flex justify-between">
+                                <p class="text-primary text-xl font-bold"> BeachFront</p>
+                                <p class="text-lg font-semibold">99$ <span class="text-[#7c8ba1]">per day</span></p>
+                            </div>
+                            <div class="text-xl font-bold text-headingColor">A Trip to the Bahamas and The Carribian
+                                Ocean</div>
+                            <div class="flex justify-between ">
+                                <p class="text-[#7c8ba1]"><i class="fa-solid fa-arrow-trend-up  text-lg mr-2"></i>Trend
+                                </p>
+                                <p class="text-[#7c8ba1]"> <i class="fa-regular fa-clock  text-lg mr-2"></i>7 DAY TOUR
+                                </p>
+                                <p class="text-[#7c8ba1]"><i class="fa-solid fa-location-dot  text-lg mr-2"></i>AFRICA
+                                </p>
+                            </div>
+                            <button
+                                class="text-white bg-primary w-full py-[0.65rem] md:text-xl text-2xl  font-semibold rounded-md">Book
+                                Now</button>
+                        </div>
+
+                    </div>
+
+                    <div class="tt-card md:w-[20rem] w-[25rem] h-auto ">
+                        <div class="w-full h-[20rem]"> <img src="assets/asset 12.jpeg" alt=""
+                                class="h-full w-full rounded-md "></div>
+                        <div class="tt-card-content flex flex-col gap-3 mt-5">
+
+                            <div class="flex justify-between">
+                                <p class="text-primary text-xl font-bold"> Cruise</p>
+                                <p class="text-lg font-semibold">120$ <span class="text-[#7c8ba1]">per day</span></p>
+                            </div>
+                            <div class="text-xl font-bold text-headingColor">A Trip to the Bahamas and The Carribian
+                                Ocean</div>
+                            <div class="flex justify-between ">
+                                <p class="text-[#7c8ba1]"><i class="fa-solid fa-arrow-trend-up  text-lg mr-2"></i>Trend
+                                </p>
+                                <p class="text-[#7c8ba1]"> <i class="fa-regular fa-clock  text-lg mr-2"></i>7 DAY TOUR
+                                </p>
+                                <p class="text-[#7c8ba1]"><i class="fa-solid fa-location-dot  text-lg mr-2"></i>AFRICA
+                                </p>
+                            </div>
+                            <button
+                                class="text-white bg-primary w-full py-[0.65rem] md:text-xl text-2xl  font-semibold rounded-md">Book
+                                Now</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="best-serv">
+            <div class="grid h-full md:p-7  grid-cols-12">
+                <div class="grid md:col-span-6   col-span-12">
+                    <img src="./assets/asset 13.jpeg"
+                        class="md:w-[35rem] w-[100%] mx-auto md:mx-0 md:h-[40rem] rounded-lg object-cover" alt="">
+                </div>
+                <div class="grid md:col-span-6 col-span-12">
+                    <div class="sm:mx-5 p-3 flex  flex-col md:gap-6 gap-10  justify-center ">
+                        <div class="text-headingColor heroTitle text-[3.2rem] md:text-[2rem] font-bold font-inter">We
+                            have the best services.</div>
+                        <p class="text-[1.3rem] text-headingColor heroPara font-semibold ">Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Magni, culpa? Consequuntur reiciendis, animi aspernatur blanditiis quia
+                            accusamus dignissimos qui! Repudiandae odit commodi unde, et laboriosam autem, ducimus
+                            aliquid reiciendis rem enim neque, repellendus nemo.</p>
+                        <div class="grid grid-cols-12 md:gap-5 gap-y-12 gap-x-8">
+                            <div class="col-span-6">
+                                <h1 class="text-primary font-bold text-5xl">192</h1>
+                                <h3 class="text-headingColor text-3xl font-semibold">Countries</h3>
+                            </div>
+                            <div class="col-span-6">
+                                <h1 class="text-primary font-bold text-5xl">479</h1>
+                                <h3 class="text-headingColor text-3xl font-semibold">Hotels</h3>
+                            </div>
+                            <div class="col-span-6">
+                                <h1 class="text-primary font-bold text-5xl">2097</h1>
+                                <h3 class="text-headingColor text-3xl font-semibold">Rooms</h3>
+                            </div>
+                            <div class="col-span-6">
+                                <h1 class="text-primary font-bold text-5xl">10347</h1>
+                                <h3 class="text-headingColor text-3xl font-semibold">Workers</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pop-recent-post" class="sm:mx-5">
+            <div class="grid  grid-cols-12 gap-y-10 sm:gap-y-0">
+                <div class="md:col-span-8 col-span-12 md:m-3">
+                    <h1 class="text-5xl  text-headingColor font-extrabold">Popular Posts</h1>
+                    <div class="grid grid-cols-12  gap-8 sm:gap-14">
+                        <div class="col-span-12 md:col-span-5">
+                            <div class="tt-card md:w-[22rem] w-[25rem] h-auto py-5">
+                                <div class="w-full h-[16rem] "> <img src="assets/asset 14.jpeg" alt=""
+                                        class="h-full w-full rounded-md object-cover"></div>
+                                <div class="tt-card-content flex flex-col gap-5 mt-5">
+                                    <h3 class="hover:text-primary text-xl font-bold text-headingColor">Tips on how to
+                                        travel
+                                        safely in foreign countries</h3>
+                                    <p class="text-[#5f626d]">Lorem ipsum dolor sit amet, consecteturious elit, sed do
+                                        eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua now ele.</p>
+                                    <div class="flex  gap-3">
+                                        <img src="./assets/asset 4.jpeg" alt="" class="w-12 h-12  rounded-full">
+                                        <div class="leading-3">
+                                            <h3 class="text-xl font-bold text-headingColor">Adam Cuppy</h3>
+                                            <p class="text-[#5f626d]">Vlogger</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-span-12 md:col-span-5">
+                            <div class="tt-card md:w-[22rem] w-[25rem] h-auto py-5">
+                                <div class="w-full h-[16rem]"> <img src="assets/asset 15.jpeg" alt=""
+                                        class="h-full w-full rounded-md object-cover"></div>
+                                <div class="tt-card-content flex flex-col gap-5 mt-5">
+                                    <h3 class="hover:text-primary text-xl font-bold text-headingColor">Tips on how to
+                                        travel
+                                        safely in foreign countries</h3>
+                                    <p class="text-[#5f626d]">Lorem ipsum dolor sit amet, consecteturious elit, sed do
+                                        eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua now ele.</p>
+                                    <div class="flex  gap-3">
+                                        <img src="./assets/asset 5.jpeg" alt="" class="w-12 h-12  rounded-full">
+                                        <div class="leading-3">
+                                            <h3 class="text-xl font-bold text-headingColor">Charlotte Delos</h3>
+                                            <p class="text-[#5f626d]">Travel Advocate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-4 md:m-3">
+                    <h1 class="text-5xl  text-headingColor font-extrabold">Recent Posts</h1>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex  justify-between items-center p-3 gap-4">
+                            <div class="leading-3">
+                                <h3 class="text-xl  font-semibold text-headingColor ">Gettin the most out of your
+                                    vacation</h3>
+                                <p class="text-[#5f626d]">Aaron Patterson</p>
+                            </div>
+                            <img src="./assets/asset 16.jpeg" alt="" class="w-24 h-20  rounded-md">
+                        </div>
+
+                        <div class="flex  justify-between items-center p-3 gap-4">
+                            <div class="leading-3">
+                                <h3 class="text-xl  font-semibold text-headingColor">Choosing the perfect Safari in
+                                    Africa</h3>
+                                <p class="text-[#5f626d]">Sam phipphen</p>
+                            </div>
+                            <img src="./assets/asset 17.jpeg" alt="" class="w-20 h-20 rounded-md">
+                        </div>
+
+
+                        <div class="flex  justify-between items-center p-3 gap-4">
+                            <div class="leading-3">
+                                <h3 class="text-xl  font-semibold text-headingColor">Hikking during the monsoon in Asia
+                                </h3>
+                                <p class="text-[#5f626d]">Tony Hawk</p>
+                            </div>
+                            <img src="./assets/asset 18.jpeg" alt="" class="w-20 h-20 rounded-md">
+                        </div>
+
+
+                        <div class="flex  justify-between items-center p-3 gap-4">
+                            <div class="leading-3">
+                                <h3 class="text-xl  font-semibold text-headingColor">Must carry items while travelling
+                                    to Thailand</h3>
+                                <p class="text-[#5f626d]">Himali Turn</p>
+                            </div>
+                            <img src="./assets/asset 19.jpeg" alt="" class="w-20 h-20 rounded-md">
+                        </div>
+
+                        <div class="flex  justify-between items-center p-3 gap-4">
+                            <div class="leading-3">
+                                <h3 class="text-xl  font-semibold text-headingColor">An extremely funny trip to the
+                                    Swiss Alps</h3>
+                                <p class="text-[#5f626d]">Naomi Watts</p>
+                            </div>
+                            <img src="./assets/asset 20.jpeg" alt="" class="w-28 h-20 rounded-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="grid grid-cols-12 gap-8 ">
+                <div class="grid md:col-span-7 col-span-12">
+                    <div class="sm:mx-5 p-3 flex  flex-col md:gap-10 gap-12  justify-center ">
+                        <div class="heroTitle text-[3.2rem] md:text-[3rem] font-bold font-inter">
+                            <p class="text-headingColor ">Testimonials</p>
+                        </div>
+                        <p class="text-[1.3rem] text-[#7D8BA0] font-semibold leading-6">Here are what some of our
+                            amazing customers are saying about our hotels & tours. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+                        <p class="text-headingColor text-2xl mt-16"><span class="text-primary text-2xl"><i
+                                    class="fa-solid fa-quote-left"></i></span> Sinor Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Escepteur sint
+                            occaecat cupidatat, sunt culpa qui office. <span class="text-primary text-2xl"><i
+                                    class="fa-solid fa-quote-right"></i></span> </p>
+                        <div class="flex  items-center gap-5">
+                            <img src="./assets/asset 5.jpeg" alt="" class="w-20 h-20  rounded-full">
+                            <div class="leading-10">
+                                <h3 class="text-3xl font-bold text-primary">Adam Cuppy</h3>
+                                <p class="text-[#7D8BA0] text-lg font-semibold">Founder,EventsNYC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 col-span-12">
+                    <img src="./assets/asset 21.jpeg" alt=""
+                        class="md:w-[33rem] w-[100%] mx-auto md:mx-0  h-[36rem] md:rounded-sm rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section id="questions">
+            <div class="grid grid-cols-12 gap-8 ">
+                <div class="md:col-span-5 col-span-12">
+                    <img src="./assets/asset 23.jpeg" alt=""
+                        class="md:w-[33rem] w-[100%] mx-auto md:mx-0 h-[36rem] md:rounded-sm rounded-lg">
+                </div>
+                <div class="grid md:col-span-7 col-span-12">
+                    <div class="flex  flex-col md:gap-8 gap-10 sm:px-12 md:px-0">
+                        <div class="heroTitle text-[3.2rem] md:text-[3rem] font-bold font-inter">
+                            <p class="text-headingColor ">Questions</p>
+                        </div>
+                        <p class="text-[1.3rem] text-[#7D8BA0] font-semibold leading-6">Here are what some of our
+                            amazing customers are saying about our hotels & tours. Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua.</p>
+
+
+                        <div class="faq-container w-full md:w-[80%] md:my-[18px]">
+                            <div class="faq-item">
+                                <div
+                                    class="question flex  justify-between   cursor-pointer font-bold md:m-0  md:text-xl text-2xl  text-headingColor">
+                                    <span>Is lunch provided free of cost ?</span>
+                                    <div
+                                        class="bg-primary  rounded-full md:w-6 w-8 md:h-6 h-8  flex justify-center items-center  md:text-xl text-2xl  ">
+                                        <span class="icon -mt-1">+</span></div>
+                                </div>
+                                <div class="answer text-lg">
+                                    <p>Yes,it is, if you have a membership with us. Otherwise it is charged as per the
+                                        menu Some limits do apply as to how much items can be included in your lunch
+                                        This limit is enough for any one person and merely exists to discuorage of the
+                                        system.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="faq-item">
+                                <div
+                                    class="question cursor-pointer justify-between flex font-bold m-0 md:text-xl text-2xl text-headingColor">
+                                    <span>Do you have 2
+                                        Bedroom suites ?</span>
+                                    <div
+                                        class="bg-primary  rounded-full md:w-6 w-8 md:h-6 h-8  flex justify-center items-center md:text-xl text-2xl ">
+                                        <span class="icon -mt-1">+</span></div>
+
+                                </div>
+                                <div class="answer text-lg">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quisquam omnis
+                                        autem, maiores harum repudiandae officia amet eius minima, distinctio natus
+                                        illum minus accusamus laborum optio unde aperiam commodi! Aliquid libero cum
+                                        quos.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div
+                                    class="question cursor-pointer justify-between flex font-bold m-0 md:text-xl text-2xl text-headingColor">
+                                    <span>Are WI-FI
+                                        costs incuded in the price ?</span>
+                                    <div
+                                        class="bg-primary  rounded-full md:w-6 w-8 md:h-6 h-8  flex justify-center items-center md:text-xl text-2xl">
+                                        <span class="icon -mt-1">+</span></div>
+
+                                </div>
+                                <div class="answer text-lg">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima repellendus
+                                        accusantium fugit iste nostrum cum blanditiis sunt, nobis vitae voluptatum
+                                        obcaecati eos vero inventore corrupti nam, delectus nemo laborum porro, et
+                                        repellat magni sapiente. Aperiam, voluptas.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div
+                                    class="question cursor-pointer justify-between flex font-bold m-0 md:text-xl text-2xl text-headingColor">
+                                    <span> Where can i
+                                        reach you for support ? </span>
+                                    <div
+                                        class="bg-primary  rounded-full md:w-6 w-8 md:h-6 h-8  flex justify-center items-center md:text-xl text-2xl ">
+                                        <span class="icon -mt-1">+</span></div>
+
+                                </div>
+                                <div class="answer text-lg">
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio neque vitae
+                                        ex molestiae repellat praesentium eveniet veritatis autem cumque libero quam
+                                        atque nulla fugit velit excepturi magnam veniam, suscipit iste rerum sit. Vel
+                                        nemo sint excepturi soluta illo accusantium debitis dolorem corporis repellat?.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter"
+            class="bg-blue-900 sm:p-8 sm:h-[45vh] flex flex-col items-center space-y-4 md:flex-row md:justify-center sm:gap-24 md:space-y-0 md:px-16">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block sm:hidden h-14 w-14 text-green-500" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <div class="flex items-center  space-x-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="sm:block hidden h-14 w-14 text-green-500" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <div class="space-y-5 sm:space-y-0 text-center">
+                    <h2 class="text-white text-5xl font-bold ">Newsletter</h2>
+                    <p class="text-gray-300 text-lg">Subscribe now to get our latest blog posts.</p>
+                </div>
+            </div>
+            <form class="flex sm:flex-row flex-col text-xl  sm:space-y-0 space-y-6 sm:space-x-2">
+                <input type="email" placeholder="Your Email Address"
+                    class="p-5 sm:w-[20rem] w-[23rem] rounded-md text-gray-900 outline-none" required>
+                <button type="submit"
+                    class="bg-green-500 sm:p-2 p-5 rounded-md text-white font-semibold hover:bg-green-600">Subscribe
+                    Now</button>
+            </form>
+        </section>
+
+        <footer
+            class="bg-gray-900 text-center text-white py-10 sm:px-6 h-[50vh] flex flex-col justify-center  items-center space-y-12">
+            <div class="logo flex  gap-5    md:gap-2 items-center">
+                <img src="./assets/asset 0.svg" alt="" class="md:w-10 w-12">
+                <span class="md:text-3xl text-3xl text-white  font-bold font-sans">Treact</span>
+            </div>
+            <nav class="flex flex-wrap justify-center md:justify-start space-x-5 text-gray-400">
+                <a href="#"
+                    class="hover:text-white text-xl sm:text-2xl font-semibold   transition-colors duration-300">Home</a>
+                <a href="#"
+                    class="hover:text-white text-xl sm:text-2xl font-semibold   transition-colors duration-300">About</a>
+                <a href="#"
+                    class="hover:text-white text-xl sm:text-2xl font-semibold  transition-colors duration-300">Contact
+                    Us</a>
+                <a href="#"
+                    class="hover:text-white text-xl sm:text-2xl font-semibold  transition-colors duration-300">Blog</a>
+                <a href="#"
+                    class="hover:text-white text-xl sm:text-2xl font-semibold  transition-colors duration-300">Reviews</a>
+            </nav>
+        </footer>
+    </main>
+</body>
+<script src="./index.js"></script>
+
+</html>

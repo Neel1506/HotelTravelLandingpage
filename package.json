@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "scripts": {
+  "build:css": "postcss styles.css -o output.css",
+  "watch:css": "postcss styles.css -o output.css --watch"
+}
+
+}

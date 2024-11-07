@@ -1,0 +1,159 @@
+/* npx tailwindcss -i ./index.css -o ./output.css --watch */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+}
+
+body {
+        width: 100%;
+        height: 100%;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+        /* Styles for extra small devices */
+        html {
+                font-size: 70% !important;
+        }
+
+        .heroTitle {
+                line-height: 3rem !important;
+
+        }
+
+        .heroPara {
+                line-height: 23px !important;
+        }
+
+        nav {
+                justify-content: space-between !important;
+        }
+
+        #second {
+                font-size: 140% !important;
+        }
+
+        .swiper-slide {
+                /* width: 26rem !important; */
+                display: hidden !important; 
+        }
+
+        #mobNav {
+                height: 52vh !important;
+                border-radius: 3% !important; 
+                width: 92% !important;
+        }
+
+
+        section {
+                padding:5rem 2rem !important;
+        }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+        /* Styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+        /* Styles for medium devices */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+        /* Styles for large devices */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+        /* Styles for extra large devices */
+}
+
+/* Ultra large devices (very large screens, 1400px and up) */
+@media (min-width: 1400px) {
+        /* Styles for ultra large devices */
+}
+
+
+
+
+.navItems li {
+        font-size: 1.2rem;
+        font-weight: bold;
+}
+
+.navItems li:hover {
+        color: #6415ff;
+        border-bottom: 2px solid #6515ff;
+        transition-duration: 1s;
+}
+
+.heroTitle {
+        line-height: 3.3rem;
+}
+
+.heroImg {
+        background-image: url('./assets/asset 6.jpeg');
+        background-size: cover;
+        background-position: center center;
+
+
+}
+
+.heroPara {
+        line-height: 35px;
+}
+
+
+.faq-item {
+        padding: 10px 0;
+}
+
+.icon {
+        color: white;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+}
+
+.answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease, opacity 0.3s ease;
+        opacity: 0;
+        padding: 0 0 10px 0;
+        color: #555;
+}
+
+.answer.show {
+        max-height: fit-content;
+        /* Adjust based on content height */
+        opacity: 1;
+}
+
+.swiper-slide {
+        width:25rem !important;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+}
+.mySwiper {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 5rem;
+
+}
+
+section{
+        padding: 1.5rem 3rem;
+}
